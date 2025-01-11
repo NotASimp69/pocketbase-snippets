@@ -3,7 +3,7 @@
   "publisher": "notasimp",
   "displayName": "PocketBase-Snippets",
   "description": "Pocketbase Snippets, for quick use.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/NotASimp69/pocketbase-snippets.git"
@@ -19,22 +19,18 @@
       {
         "language": "typescript",
         "path": "./snippets/snippets.code-snippets"
-        
       },
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets"
-        
       },
       {
         "language": "javascriptreact",
         "path": "./snippets/snippets.code-snippets"
-        
       },
       {
         "language": "typescriptreact",
         "path": "./snippets/snippets.code-snippets"
-        
       }
     ]
   }
