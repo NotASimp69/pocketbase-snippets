@@ -1,0 +1,130 @@
+{
+    "Create Database Entry": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-create",
+        "body": [
+            "const data = {",
+            "    \"username\": \"test_username\",",
+            "    \"email\": \"\",",
+            "    \"emailVisibility\": true,",
+            "    \"password\": \"example\",",
+            "    \"passwordConfirm\": \"12345678\",",
+            "    \"name\": \"test\"",
+            "};",
+            "",
+            "const record = await pb.collection('collection').create(data);",
+            ""
+        ],
+        
+
+        "description": "Log output to console"
+    },
+
+    "Delete Database Entry": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-delete",
+        "body": [
+            "const record = await pb.collection('collection').delete('record_id');",
+            ""
+        ],
+        
+
+        "description": "Delete Database Entry"
+    },
+
+    "Update Database Entry": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-update",
+        "body": [
+            "const data = {",
+            "    \"username\": \"test_username\",",
+            "    \"email\": \"\",",
+            "    \"emailVisibility\": true,",
+            "    \"password\": \"example\",",
+            "    \"passwordConfirm\": \"12345678\",",
+            "    \"name\": \"test\"",
+            "};",
+            "",
+            "const record = await pb.collection('collection').update('record_id', data);",
+            ""
+        ],
+        
+
+        "description": "Update Database Entry"
+    },
+
+    "View One Database Entry": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-view-one",
+        "body": [
+            "const record = await pb.collection('collection').getOne('record_id');",
+            "expand: 'relatedField'",
+            ""
+        ],
+        
+
+        "description": "View Database Entry"
+    },
+
+    "List paginated entries": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-list-paginated",
+        "body": [
+            "const resultList = await pb.collection('collection').getList(page, results, {",
+            "    filter: 'created >= \"2022-01-01 00:00:00\" && someField1 != someField2',",
+            "});"
+        ],
+        
+
+        "description": "List paginated Database Entries"
+    },
+
+    "List everything": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-list-all",
+        "body": [
+            "const records = await pb.collection('collection').getFullList({",
+            "    sort: '-created',",
+            "});"
+        ],
+        
+
+        "description": "List all Database Entries"
+    },  
+
+    "Get first List item": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-list-first",
+        "body": [
+    
+            "const record = await pb.collection('users').getFirstListItem('someField=someField', {",
+            "    expand: 'relField1,relField2.subRelField',",
+            "});"
+        ],
+        
+
+        "description": "Get first Database Entry"
+    },
+
+    "Auth with Password": {
+        "scope": "javascript,typescript",
+        "prefix": "pb-auth-password",
+        "body": [
+            "const authData = await pb.collection('users').authWithPassword(",
+            "    'YOUR_USERNAME_OR_EMAIL',",
+            "    'YOUR_PASSWORD'",
+            ");"
+        ],
+        "description": "Authenticate with Password"
+    },
+
+    "Auth Refresh":{
+        "scope": "javascript,typescript",
+        "prefix": "pb-auth-refresh",
+        "body": [
+            "const authData = await pb.collection('users').authRefresh();"
+        ],
+        "description": "Refresh Auth"
+    }
+
+}
